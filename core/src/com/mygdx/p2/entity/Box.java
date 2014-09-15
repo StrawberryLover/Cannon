@@ -21,12 +21,17 @@ public class Box {
     }
 
     public void draw() {
-        renderer.begin();
+        renderer.begin(ShapeRenderer.ShapeType.Filled);
             // Set Color
             renderer.setColor(BOX_COLOR);
 
             // Draw Ground
-            renderer.rect(0, BOX_THICKNESS, Gdx.graphics.getWidth(), BOX_THICKNESS);
+            // renderer.rect(0, 0, Gdx.graphics.getWidth(), BOX_THICKNESS);
+
+            // Draw Walls
+            renderer.rect(0, 0, BOX_THICKNESS, Gdx.graphics.getHeight());
+
+            renderer.rect(Gdx.graphics.getWidth() - BOX_THICKNESS, 0, BOX_THICKNESS, Gdx.graphics.getHeight());
 
         renderer.end();
     }
